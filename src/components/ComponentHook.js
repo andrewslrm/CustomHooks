@@ -9,12 +9,12 @@ const ComponentHook = () => {
   
       return () => {
         console.log('remove from component')
-      }
-    }, []) // solo se ejecuta una ves al cargar
+      } // Al regresar una funcion al final se ejecuta cuando el componente se va a eliminar remplaza a componentWillUnmount
+    }, []) // [] significa solo se ejecuta una ves al cargar remplaza a componentDidMount
   
     useEffect(() => {
       console.log('Se actualizo algo en el componente')
-    })
+    }) // Se ejecuta simpre que cambie cualquer valor del estado remplaza a componentWillUpdate
   
     const fetchPosts = async () => {
       const response = await fetch('https://jsonplaceholder.typicode.com/posts')
